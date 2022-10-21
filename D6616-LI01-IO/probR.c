@@ -1,30 +1,23 @@
 #include <stdio.h>
 #include <string.h>
 
-char N[10]; // ID
-char M[100]; // name
-int O; // num
+char N[15]; 
+char M[105]; 
+char C[26];
+double O; 
 
 int main(){
 
-    char C; // kelas
 
-    scanf("%s", N);
-    // N = getchar();
-
+    scanf("%s\n", N);
     scanf("%[^\n]s", M);
-    // M = getchar();
-
-    scanf("%c", C);
-    C = getchar();
-
-    scanf("%d", &O);
-
+    scanf("%s", C);
+    scanf("%lf", &O);
 
     printf("Id    : %s\n", N);
     printf("Name  : %s\n", M);
-    printf("Class : %c\n", C);
-    printf("Num   : %d\n", O);
+    printf("Class : %s\n", C);
+    printf("Num   : %.0lf\n", O);
 
     return 0;
 }
