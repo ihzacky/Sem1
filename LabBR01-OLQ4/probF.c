@@ -66,9 +66,9 @@ int main(){
 
     // printf("The product of the three matrices is:-\n");
     for (int loop = 0; loop < T; loop++){ // looping based on testcase aka "Case #%d"
-        printf("Case #%d:\n", loop+1); // 
+        printf("Case #%d:\n", loop+1);
 
-        for (i = 0; i < matrixSize[loop]; i++) {    // masalahnya disini matrixsize keoverwrite sama yg ordo 3
+        for (i = 0; i < matrixSize[loop]; i++) {   
             for (j = 0; j < matrixSize[loop]; j++) {
                 printf("%d ", res[loop][i][j]);
             }
