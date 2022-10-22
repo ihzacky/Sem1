@@ -2,36 +2,37 @@
 
 int matrixSize[50];
 int T, i, j, k;
-int a[100][100][100], b[100][100][100],c[100][100][100], tempRes[100][100][100], res[100][100][100];
+int a[100][100][100], b[100][100][100],c[100][100][100];
+int tempRes[100][100][100], res[100][100][100];
 
 int main(){
 
     scanf("%d", &T);
 
-    /*------------INPUT-----------OK*/
+    /*------------INPUT-----------*/
     for (int loop = 0; loop < T; loop++){ // looping testcase
 
-        // printf("enter matrix size:\n");
+        // ordo matrix
         scanf("%d", &matrixSize[loop]);
 
-        // printf("Enter the elements of Matrix-A:\n");
+        // matrix A
         for (i = 0; i < matrixSize[loop]; i++) {
             for (j = 0; j < matrixSize[loop]; j++) {
-                scanf("%d", & a[loop][i][j]);
+                scanf("%d", &a[loop][i][j]);
             }
         }
         printf("\n");
-        // printf("Enter the elements of Matrix-B:\n");
+        // matrixB
         for (i = 0; i < matrixSize[loop]; i++) {
             for (j = 0; j < matrixSize[loop]; j++) {
-                scanf("%d", & b[loop][i][j]);
+                scanf("%d", &b[loop][i][j]);
             }
         }
         printf("\n");
-            // printf("Enter the elements of Matrix-C:\n");
+            // matrix C
         for (i = 0; i < matrixSize[loop]; i++) {
             for (j = 0; j < matrixSize[loop]; j++) {
-                scanf("%d", & c[loop][i][j]);
+                scanf("%d", &c[loop][i][j]);
             }
         }
         printf("\n");
@@ -63,8 +64,6 @@ int main(){
     
 
     /* ----------OUTPUT--------- */
-
-    // printf("The product of the three matrices is:-\n");
     for (int loop = 0; loop < T; loop++){ // looping based on testcase aka "Case #%d"
         printf("Case #%d:\n", loop+1);
 
