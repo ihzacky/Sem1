@@ -1,25 +1,20 @@
 #include <stdio.h>
 #include <string.h>
-/* 
 
-    sisa gimana caranya biar yang keluar cuma lowercase letter
-
-*/
 int T; // number of testcase, each testcase contain 2 lines
 int N; // length of string S, including white space
-char S[100][100]; // the string itself
 
 int main(){
 
-    char str[100][100];
-
     scanf("%d\n", &T); // number of testcase
+
+    char str[T][100]; // string array
 
     for(int i = 0; i < T; i++){
 
         scanf("%d\n", &N); // string length
         
-        scanf("%[^\n]", str[i]); // string input (gimana biar yang masuk cuma lowercase ajah no whitespace)
+        scanf("%[^\n]", str[i]); // string input
 
     }
     
@@ -45,7 +40,6 @@ int main(){
 
         printf("Case #%d: %s\n", i+1, str[i]); // output OK
     }
-
 
     return 0;
 }
