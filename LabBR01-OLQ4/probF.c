@@ -22,7 +22,7 @@ int main(){
             }
         }
         printf("\n");
-        // matrixB
+        // matrix B
         for (i = 0; i < matrixSize[loop]; i++) {
             for (j = 0; j < matrixSize[loop]; j++) {
                 scanf("%d", &b[loop][i][j]);
