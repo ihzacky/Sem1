@@ -1,10 +1,5 @@
 #include <stdio.h>
 
-/*
-
-belum tau codingan ini betul apa salah
-
-*/
 int N;
 
 
@@ -16,34 +11,26 @@ int main(){
 
     for (int i = 0; i < N; i++){
         
-        // printf("ini i di loop pertama %d\n", i);
         scanf("%d", &Ki[i]);
     }
 
     for (int i = 0; i < N; i++){
 
-        // printf("var perantara: %d\n", perantara);
-        // printf("sumDice log 1: %d\n", sumDice);
-        sumDice = sumDice + Ki[i];
+        sumDice = (sumDice + Ki[i]) % 40;
 
-        // printf("Ki: %s\n", Ki[i]);
-        // printf("Ki after multi: %s\n", Ki[i]);
-
-        // printf("sumDice log %d\n", sumDice);
-
+        switch (sumDice){
+        case 12:
+            sumDice = 28;
+            break;
+        case 35:
+            sumDice = 7;
+            break;
+        default:
+            break;
+        }
     }
 
-    switch (sumDice){
-    case 12:
-        printf("28\n");
-        break;
-    case 35:
-        printf("7\n");
-        break;
-    default:
-        printf("%d\n", sumDice);
-        break;
-    }
+    printf("%d\n", sumDice);
 
     return 0;
 }
