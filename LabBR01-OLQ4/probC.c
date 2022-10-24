@@ -18,17 +18,14 @@ int main(){
 
     }
     
-    for (int tcL1 = 0; tcL1 < T; tcL1++){ // testcase looping
+    for (int tcL1 = 0; tcL1 < T; tcL1++){ 
 
         for (int i = 0, j; str[tcL1][i] != '\0'; ++i) {
 
-            // enter the loop if the character is not an a-z (lowercase)
-            // and not the null character
+           
             while (!(str[tcL1][i] >= 'a' && str[tcL1][i] <= 'z') && !(str[tcL1][i] == '\0')) {
                 for (j = i; str[tcL1][j] != '\0'; ++j) {
 
-                // if jth element of str is not an alphabet,
-                // assign the value of (j+1)th element to the jth element
                 str[tcL1][j] = str[tcL1][j + 1];
                 }
                 str[tcL1][j] = '\0';
@@ -38,7 +35,7 @@ int main(){
 
     for(int i = 0; i < T; i++){
 
-        printf("Case #%d: %s\n", i+1, str[i]); // output OK
+        printf("Case #%d: %s\n", i+1, str[i]); 
     }
 
     return 0;
