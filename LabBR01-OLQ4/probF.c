@@ -67,8 +67,9 @@ int main(){
     for (int loop = 0; loop < T; loop++){ // looping based on testcase aka "Case #%d"
         printf("Case #%d:\n", loop+1);
 
-        for (i = 0; i < matrixSize[loop]; i++) {   
-            for (j = 0; j < matrixSize[loop]; j++) {
+        for (int i = 0; i < matrixSize[loop]; i++) {   
+            for (int j = 0; j < matrixSize[loop]; j++) {
+                
                 printf("%d ", res[loop][i][j]);
             }
             printf("\n");
