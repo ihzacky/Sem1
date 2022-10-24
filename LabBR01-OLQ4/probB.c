@@ -19,6 +19,9 @@ int main(){
         sumDice = (sumDice + Ki[i]) % 40;
 
         switch (sumDice){
+        case 30:
+            sumDice = 10;
+            break;
         case 12:
             sumDice = 28;
             break;
