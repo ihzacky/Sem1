@@ -22,9 +22,9 @@ int main(){
 
         for (int i = 0, j; str[tcL1][i] != '\0'; ++i) {
 
-            // enter the loop if the character is not an alphabet
+            // enter the loop if the character is not an a-z (lowercase)
             // and not the null character
-            while (!(str[tcL1][i] >= 'a' && str[tcL1][i] <= 'z') && !(str[tcL1][i] >= 'A' && str[tcL1][i] <= 'Z') && !(str[tcL1][i] == '\0')) {
+            while (!(str[tcL1][i] >= 'a' && str[tcL1][i] <= 'z') && !(str[tcL1][i] == '\0')) {
                 for (j = i; str[tcL1][j] != '\0'; ++j) {
 
                 // if jth element of str is not an alphabet,
