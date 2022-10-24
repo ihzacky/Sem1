@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "probj": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "algorithm": "c"
     }
 }

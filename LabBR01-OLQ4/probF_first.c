@@ -8,12 +8,13 @@ int main(){
 
     scanf("%d", &T); // input testcase matrix
 
-    for (int i = 0; i < T; i++){ // loop testcase   --  INI BARU INPUT  
+    for (int tcLoop = 0; tcLoop < T; tcLoop++){ // loop testcase   --  INI BARU INPUT  
         
+        printf("enter size\n");
         scanf("%d", &matrixSize); // input size matrixnya
 
         int matrix01[matrixSize][matrixSize][matrixSize];
-        int matrixProd[matrixSize][matrixSize][matrixSize];
+        // int matrixProd[matrixSize][matrixSize][matrixSize];
 
         for (int i = 0; i < 3; i++){ // loop buat ambil 3 matrix
 
@@ -29,6 +30,7 @@ int main(){
             }
             printf("new matrix\n");
         }
+        printf("drop\n");
     }
 
     // PROCESS
