@@ -1,13 +1,5 @@
 #include <stdio.h>
 
-/*
-
-
-coba dikoreksi lagi walaupun sudah kelar
-
-
-*/
-
 int N, Q;
 int views[100];
 
