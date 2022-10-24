@@ -2,7 +2,6 @@
 
 int T, N;
 
-
 int main(){
 
     scanf("%d", &T);
