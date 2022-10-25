@@ -21,21 +21,21 @@ int main(){
                 scanf("%d", &a[loop][i][j]);
             }
         }
-        printf("\n");
+        // printf("\n");
         // matrix B
         for (i = 0; i < matrixSize[loop]; i++) {
             for (j = 0; j < matrixSize[loop]; j++) {
                 scanf("%d", &b[loop][i][j]);
             }
         }
-        printf("\n");
+        // printf("\n");
             // matrix C
         for (i = 0; i < matrixSize[loop]; i++) {
             for (j = 0; j < matrixSize[loop]; j++) {
                 scanf("%d", &c[loop][i][j]);
             }
         }
-        printf("\n");
+        // printf("\n");
     }
 
     /* ---------PROCESSING 3 MATRIX MULTIPLICATION--------- */
