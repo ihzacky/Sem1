@@ -30,8 +30,6 @@ int main(){
             sisa[i][l] = A[l] - B[l];
 
         }
-        
-        
 
     }
 
