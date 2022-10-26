@@ -20,7 +20,8 @@ int main(){
         }
     }
     
-    // /* input array test */
+
+    // /* input test */
     // printf("Case #1: "); 
     // for (int j = 0; j < N; j++){
         
@@ -66,9 +67,6 @@ int main(){
 
     // }
 
-    
-
-    
 
     /*----- OUTPUT -----*/
     for (int i = 0; i < Q; i++){
