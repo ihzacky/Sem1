@@ -12,12 +12,12 @@ int main(){
     length = strlen(string);
 
     for (int i = 0; i < length; i++){
-
+        
         output[(length-1)-i] = string[i];        
         
     }
     
-    printf("%s", output);
+    printf("%s\n", output);
 
     return 0;
 }
