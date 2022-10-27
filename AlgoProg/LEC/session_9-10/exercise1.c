@@ -24,7 +24,8 @@ int main(){
 
     }
     
-    int sum = 0, avg;
+    int sum = 0; 
+    double avg;
     for (int i = 0; i < 10; i++){
         
         sum += x[i];
@@ -35,9 +36,7 @@ int main(){
 
     printf("Max value inside the array: %d\n", max);
     printf("Min value inside the array: %d\n", min);
-    printf("Average value of the array: %d\n", avg);
-
-
+    printf("Average value of the array: %.2lf\n", avg);
 
     return 0;
 }
