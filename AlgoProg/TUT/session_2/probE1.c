@@ -24,12 +24,12 @@ int main(){
         }
 
         /*------- PROCESS -------*/
-        for (int row = 0; row < X[i]; row++){
+        for (int col = 0; col < X[i]; col++){
 
-            sum[i][row] = 0;
-            for (int col = 0; col < X[i]; col++){
+            sum[i][col] = 0;
+            for (int row = 0; row < X[i]; row++){
                 
-                sum[i][row] += arrayNum[col][row];
+                sum[i][col] += arrayNum[row][col];
                 
             }
         }
