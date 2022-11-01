@@ -2,6 +2,7 @@
     "files.associations": {
         "probj": "c",
         "stdio.h": "c",
-        "algorithm": "c"
+        "algorithm": "c",
+        "string.h": "c"
     }
 }
