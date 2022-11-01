@@ -2,8 +2,8 @@
 
 double N;
 double M;
-double X[100]; // bibi's weapon attack power
-double Y[100]; // dragon's attack power
+double X[100000]; // bibi's weapon attack power
+double Y[100000]; // dragon's weapon attack power
 
 int main(){
 
@@ -37,9 +37,15 @@ int main(){
 
     }
 
+    // if (xMax > yMax){
+    //     printf("The dark secret was true\n");
+    // } else if (yMax > xMax){
+    //     printf("Secret debunked\n");
+    // }
+
     if (xMax > yMax){
         printf("The dark secret was true\n");
-    } else if (yMax > xMax){
+    } else {
         printf("Secret debunked\n");
     }
 
