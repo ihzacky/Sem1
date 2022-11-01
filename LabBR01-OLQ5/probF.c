@@ -37,18 +37,17 @@ int main(){
 
     }
 
-    // if (xMax > yMax){
-    //     printf("The dark secret was true\n");
-    // } else if (yMax > xMax){
-    //     printf("Secret debunked\n");
-    // }
-
     if (xMax > yMax){
         printf("The dark secret was true\n");
     } else {
         printf("Secret debunked\n");
     }
 
+    // if (xMax > yMax){
+    //     printf("The dark secret was true\n");
+    // } else if (yMax > xMax){
+    //     printf("Secret debunked\n");
+    // }
 
     // printf("xMax: %d\n", xMax);
     // for (int i = 0; i < N; i++)
