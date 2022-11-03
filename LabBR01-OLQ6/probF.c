@@ -55,6 +55,7 @@ int main(){
 
     }
 
+    // idk why does it switched ???
     printf("Vocal: %d\n", consCount);
     printf("Consonant: %d\n", vocCount);
     
