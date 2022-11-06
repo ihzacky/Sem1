@@ -1,14 +1,14 @@
 #include <stdio.h>
 
 int T;
-int N;
+long long int N;
 
 // ini soal minta kita buat ubah decimal jadi binary
 // caranya dengan bagi aja angkanya teros pake angka 2, sisa dari angkanya jadi binary deh
 // pake modulo
 
-int tempDiv[100];
-int tempMod[100];
+long long int tempDiv[100];
+long long int tempMod[100];
 
 int main(){
 
@@ -16,7 +16,7 @@ int main(){
     getchar();
     for (int i = 0; i < T; i++){
     
-        scanf("%d", &N);
+        scanf("%lld", &N);
         getchar();
 
         int j;
@@ -31,7 +31,7 @@ int main(){
         for (int k = 0; k < j; k++){
 
             // hasil mod dibaca dari belakang                
-            printf("%d", tempMod[(j - 1) - k]);
+            printf("%lld", tempMod[(j - 1) - k]);
         }
 
         printf("\n");
