@@ -79,7 +79,7 @@ int main(){
             }
         }
 
-        printf("Case #1:\n");
+        printf("Case #%d:\n", i+1);
         printf("%s\n", out);
         for (int x = 0; x < len; x++){
 
