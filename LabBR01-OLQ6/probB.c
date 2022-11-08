@@ -4,11 +4,11 @@
 int T;
 char str[1000];
 
-char A[] = {'A', 'B', 'C', 'D'};
-char E[] = {'E', 'F', 'G', 'H'};
-char I[] = {'I', 'J', 'K', 'L', 'M', 'N'};
-char O[] = {'O', 'P', 'Q', 'R', 'S', 'T'};
-char U[] = {'U', 'V', 'W', 'X', 'Y', 'Z'};
+char A[4] = {'A', 'B', 'C', 'D'}; // 0-3
+char E[4] = {'E', 'F', 'G', 'H'}; // 4-7
+char I[6] = {'I', 'J', 'K', 'L', 'M', 'N'}; //8-13
+char O[6] = {'O', 'P', 'Q', 'R', 'S', 'T'}; //14-19
+char U[6] = {'U', 'V', 'W', 'X', 'Y', 'Z'}; //20-25
 
 int len;
 
