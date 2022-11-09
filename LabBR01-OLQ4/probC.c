@@ -26,7 +26,7 @@ int main(){
             while (!(str[tcL1][i] >= 'a' && str[tcL1][i] <= 'z') && !(str[tcL1][i] == '\0')) {
                 for (j = i; str[tcL1][j] != '\0'; ++j) {
 
-                str[tcL1][j] = str[tcL1][j + 1];
+                    str[tcL1][j] = str[tcL1][j + 1];
                 }
                 str[tcL1][j] = '\0';
             }
