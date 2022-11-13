@@ -10,8 +10,8 @@ struct accessed_account{
 
 int menu_selector;
 
+void list_menu();
 void list();
-void list_subMenu();
 
 void transfer();
 
@@ -21,7 +21,9 @@ void del();
 
 int main(){
 
+    
     // system("cls");
+    menu_selector = 0;
     while (menu_selector != 3){
 
         printf("[-------------------]\n");
@@ -36,7 +38,7 @@ int main(){
         {
         case 1:
             system("cls");
-            list();
+            list_menu();
 
             break;
         case 2:
@@ -61,43 +63,10 @@ int main(){
     return 0;
 }
 
-void list(){
+void list_menu(){
 
-    FILE *fp;
-    if ((fp = fopen("list_rekening.txt", "r")) == NULL){
-        
-        fp = fopen("list_rekening.txt", "w");
-        fclose(fp);
-    }
-    
-    int check = getc(fp);
-    if (check == EOF){
-        
-        add();
-    }
-
-    fp = fopen("list_rekening.txt", "r");
-    int ch, lcount = 0;
-    while((ch = fgetc(fp)) != EOF){
-
-		if(ch == '\n'){
-
-			lcount++;
-        }    
-	}
-    fclose(fp);
-
-    fp = fopen("list_rekening.txt", "r");
-    printf(">> ACCOUNT LIST\n");
-    for (int i = 0; i < lcount; i++){
-
-        printf("%d.", i+1);
-        fscanf(fp, "%[^_]_%[^_]_%d\n", rekening.no, rekening.nama, rekening.balance);
-        printf("\tAccount Number\t: %s\n", rekening.no);
-        printf("\tAccount Name\t: %s\n\n", rekening.nama);
-
-    }
-    fclose(fp);
+    menu_selector = 0;
+    list();
 
     printf("[-----------------------------]\n");
     printf("  1. Add new account\n");
@@ -141,16 +110,49 @@ void list(){
         }
 
     }
-    
-}
-
-void list_subMenu(){
-
-    
-
-
 
 }
+
+void list(){
+
+    FILE *fp;
+    if ((fp = fopen("list_rekening.txt", "r")) == NULL){
+        
+        fp = fopen("list_rekening.txt", "w");
+        fclose(fp);
+    }
+    
+    int check = getc(fp);
+    if (check == EOF){
+        
+        add();
+    }
+
+    fp = fopen("list_rekening.txt", "r");
+    int ch, lcount = 0;
+    while((ch = fgetc(fp)) != EOF){
+
+		if(ch == '\n'){
+
+			lcount++;
+        }    
+	}
+    fclose(fp);
+
+    fp = fopen("list_rekening.txt", "r");
+    printf(">> ACCOUNT LIST\n");
+    for (int i = 0; i < lcount; i++){
+
+        printf("%d.", i+1);
+        fscanf(fp, "%[^_]_%[^_]_%d\n", rekening.no, rekening.nama, rekening.balance);
+        printf("\tAccount Number\t: %s\n", rekening.no);
+        printf("\tAccount Name\t: %s\n\n", rekening.nama);
+
+    }
+    fclose(fp);
+
+}
+
 
 void transfer(){
 
@@ -196,12 +198,14 @@ void add(){
     fclose(fp);
     system("cls");
 
-    return list();
+    return list_menu();
 }
 
 
 void modify(){
 
+
+    menu_selector = 0;
     list();
 
     printf("Which number do you want to modify?\n");
@@ -216,6 +220,12 @@ void modify(){
 
 void del(){
 
+    menu_selector = 0;
+    list();
+
+    printf("Which number do you want to delete?\n");
+    printf(">> \n");
+    scanf("%d", &menu_selector);
 
 
 }
