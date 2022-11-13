@@ -11,6 +11,8 @@ struct accessed_account{
 int menu_selector;
 
 void list();
+void list_subMenu();
+
 void transfer();
 
 void add();
@@ -61,41 +63,41 @@ int main(){
 
 void list(){
 
-    FILE *fptr;
-    if ((fptr = fopen("list_rekening.txt", "r")) == NULL){
+    FILE *fp;
+    if ((fp = fopen("list_rekening.txt", "r")) == NULL){
         
-        fptr = fopen("list_rekening.txt", "w");
-        fclose(fptr);
+        fp = fopen("list_rekening.txt", "w");
+        fclose(fp);
     }
     
-    int check = getc(fptr);
+    int check = getc(fp);
     if (check == EOF){
         
         add();
     }
 
-    fptr = fopen("list_rekening.txt", "r");
+    fp = fopen("list_rekening.txt", "r");
     int ch, lcount = 0;
-    while((ch = fgetc(fptr)) != EOF){
+    while((ch = fgetc(fp)) != EOF){
 
 		if(ch == '\n'){
 
 			lcount++;
         }    
 	}
-    fclose(fptr);
+    fclose(fp);
 
-    fptr = fopen("list_rekening.txt", "r");
+    fp = fopen("list_rekening.txt", "r");
     printf(">> ACCOUNT LIST\n");
     for (int i = 0; i < lcount; i++){
 
         printf("%d.", i+1);
-        fscanf(fptr, "%[^_]_%[^_]_%d\n", rekening.no, rekening.nama, rekening.balance);
+        fscanf(fp, "%[^_]_%[^_]_%d\n", rekening.no, rekening.nama, rekening.balance);
         printf("\tAccount Number\t: %s\n", rekening.no);
         printf("\tAccount Name\t: %s\n\n", rekening.nama);
 
     }
-    fclose(fptr);
+    fclose(fp);
 
     printf("[-----------------------------]\n");
     printf("  1. Add new account\n");
@@ -118,7 +120,7 @@ void list(){
         case 2:
 
             system("cls");
-            // modify();    
+            modify();    
             break;
         case 3:
 
@@ -142,6 +144,14 @@ void list(){
     
 }
 
+void list_subMenu(){
+
+    
+
+
+
+}
+
 void transfer(){
 
 
@@ -150,22 +160,15 @@ void transfer(){
 
 void add(){
 
-    FILE *fptr = fopen("list_rekening.txt", "a");
-    
-    int c = fgetc(fptr);
-    if (c == EOF) {
+    FILE *fp = fopen("list_rekening.txt", "a");
+    FILE *fp_read = fopen("list_rekening.txt", "r");
 
-        printf("No data!\nPlease add account destination\n");
-    } else {
-
-        ungetc(c, fptr);
-    }
-
-    // int check = getc(fptr);
-    // if (check == EOF){
+    int check = getc(fp_read);
+    if (check == EOF){
         
-    //     printf("No data!\nPlease add account destination\n");
-    // }
+        printf("No data!\nPlease add account destination\n");
+    }
+    fclose(fp_read);
     
     x:
     printf("Account Number [Max: 5 number]: ");
@@ -188,11 +191,31 @@ void add(){
     scanf("%[^\n]", rekening.nama); 
     getchar();
 
-    printf("%s", rekening.no);
-    fprintf(fptr, "%s_%s_0\n", rekening.no, rekening.nama);
+    fprintf(fp, "%s_%s_0\n", rekening.no, rekening.nama);
 
-    fclose(fptr);
+    fclose(fp);
     system("cls");
 
     return list();
+}
+
+
+void modify(){
+
+    list();
+
+    printf("Which number do you want to modify?\n");
+    printf(">> \n");
+    scanf("%d", &menu_selector);
+
+
+
+
+}
+
+
+void del(){
+
+
+
 }
