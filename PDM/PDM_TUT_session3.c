@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdbool.h>
+
+#define MAX_LINE 2048
+
+char filename[] = {"account_list.txt"};
 
 struct accessed_account{
     char no[5];
@@ -22,7 +27,6 @@ void transfer();
 
 int main(){
 
-    
     // system("cls");
     menu_selector = 0;
     while (menu_selector != '3'){
@@ -38,14 +42,14 @@ int main(){
         switch (menu_selector)
         {
         case 1:
+
             system("cls");
             list_menu();
-
             break;
         case 2:
+
             system("cls");
             transfer();
-
             break;
         case 3:
 
@@ -54,6 +58,7 @@ int main(){
             break;
         
         default:
+
             system("cls");
             printf("Invalid command!\n");
             break;
@@ -63,6 +68,7 @@ int main(){
 
     return 0;
 }
+
 
 void list_menu(){
 
@@ -80,7 +86,6 @@ void list_menu(){
     scanf("%d", &menu_selector); 
     getchar();
 
-    
         switch (menu_selector)
         {
         case 1:
@@ -118,9 +123,9 @@ void list_menu(){
 void list(){
 
     FILE *fp;
-    if ((fp = fopen("list_rekening.txt", "r")) == NULL){
+    if ((fp = fopen(filename, "r")) == NULL){
         
-        fp = fopen("list_rekening.txt", "w");
+        fp = fopen(filename, "w");
         fclose(fp);
     }
     
@@ -130,7 +135,7 @@ void list(){
         add();
     }
 
-    fp = fopen("list_rekening.txt", "r");
+    fp = fopen("account_list.txt", "r");
     int ch, lcount = 0;
     while((ch = fgetc(fp)) != EOF){
 
@@ -155,17 +160,10 @@ void list(){
 
 }
 
-
-void transfer(){
-
-
-
-}
-
 void add(){
 
-    FILE *fp = fopen("list_rekening.txt", "a");
-    FILE *fp_read = fopen("list_rekening.txt", "r");
+    FILE *fp = fopen(filename, "a");
+    FILE *fp_read = fopen(filename, "r");
 
     int check = getc(fp_read);
     if (check == EOF){
@@ -203,10 +201,9 @@ void add(){
     return list_menu();
 }
 
-
 void modify(){
 
-    FILE *fp = fopen("list_rekening.txt", "r");
+    FILE *fp = fopen(filename, "r");
 
     int selector = 0;
     char tempNo [5];
@@ -271,10 +268,12 @@ void modify(){
 
 }
 
-
 void del(){
 
-    FILE *fp = fopen("list_rekening.txt", "r");
+    char temp_filename[] = {"temp___account_list.txt"};
+
+    FILE *fp = fopen(filename, "r");
+    FILE *fp_temp = fopen(temp_filename, "w");
 
     int selector = 0;
     list();
@@ -283,18 +282,44 @@ void del(){
     printf(">> ");
     scanf("%d", &selector);
 
-    int ch, lcount = 0;
-    while((ch = fgetc(fp)) != EOF){
+    char buffer [MAX_LINE];
+    bool keep_reading = true;
+    int lcount = 1;
+    do {
 
-		if(ch == '\n'){
+        fgets(buffer, MAX_LINE, fp);
+    
+        if (feof(fp)) {
 
-			lcount++;
-        }    
-        if (lcount == selector)
-        {
-            // delete the string <
+            keep_reading = false;
+        }else if (lcount != selector){
+
+            fputs(buffer, fp_temp);
         }
         
-	}
+        lcount++;
+    } while (keep_reading);
+    
+    fclose(fp);
+    fclose(fp_temp);
+
+
+    if (remove(filename)!=0)
+    {
+        printf("delete error\n");
+    }
+    if (rename(temp_filename, filename)!=0)
+    {
+        printf("rename error\n");
+    }
+    
+    
+
+}
+
+
+void transfer(){
+
+
 
 }
