@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int T, N, M, X;
+int T, M, X;
+long int N;
 int doors;
 
 int main(){
@@ -8,7 +9,7 @@ int main(){
     scanf("%d", &T);
         
     for (int i = 0; i < T; i++){
-        scanf("%d %d", &N, &M);
+        scanf("%ld %d", &N, &M);
 
         
         int doors[N+1];
