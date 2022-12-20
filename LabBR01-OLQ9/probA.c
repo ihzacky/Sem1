@@ -12,7 +12,7 @@ int main() {
 
     for (int i = 0; i < T; i++) {
         
-        scanf("%d", &n); // the n-th fibo function that lili want to ask
+        scanf("%d", &n);
         
         count = 0;
         int result = fib(n, &count);
@@ -25,7 +25,7 @@ int main() {
 
 int fib(int n, int* count) {
 
-    (*count)++; // increment the count each time the function is called
+    (*count)++;
 
     if (n == 0 || n == 1) {
     

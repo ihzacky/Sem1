@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int T;
-int N; // index of jojonascci series
+int N;
 long long int X;
 long long int Y;
 
