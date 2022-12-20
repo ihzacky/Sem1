@@ -28,10 +28,10 @@ int main(){
        fscanf(fp, "%s", &input);   // read name of friend dari file
         printf("Case #%d: ", i+1); 
 
-        int found = 0;  // declare variableddd found menjadi 0
+        int found = 0;  // declare variable found menjadi 0
         for (int j = 0; j < N; j++){    // loop untuk compare string
 
-            if (strcmp(input, read[j].M) == 0){    // icompare nput_testcase sama dengan name of friend
+            if (strcmp(input, read[j].M) == 0){    // compare input_testcase sama dengan name of friend
 
                 printf("%s\n", read[j].P);  // print name tree yang telah tersimpan di struct
                 found = 1;  // set variable found menjadi angka 1
