@@ -1,14 +1,16 @@
 #include <stdio.h>
 
-long int A;
-long int B;
+long int A; // declare integer A
+long int B; // declare integer B
 
 int main(){
 
-    FILE *fp = fopen("testdata.in", "r");
+    FILE *fp = fopen("testdata.in", "r");   // open file
 
-    fscanf(fp, "%d %d", &A, &B);
-    printf("%d\n", A + B);
+    fscanf(fp, "%ld %ld", &A, &B);    // read angka dari file dan simpan di variable A dan B
+    printf("%ld\n", A + B);  // print hasil dari penjumlahan A dan B
+
+    fclose(fp); // close file
 
     return 0;
 }

@@ -1,58 +1,51 @@
 #include <stdio.h>
 #include <string.h>
 
-int N;
-int T;
+int N;  // declare integer untuk menampung angka jumlah records
+int T;  // declare integer untuk menampung angka jumlah testcase
 
-struct ax{
+struct read_record{ // menggunakan struct untuk menyimpan string dari records
 
-    char M[40];
-    char P[40];
+    char M[41];
+    char P[41];
 } read[100];
 
-struct input_test{
-
-    char S[40];
-} input[100];
+char input[41]; //input testcase
 
 int main(){
 
-    FILE *fp = fopen("testdata.in", "r");
+    FILE *fp = fopen("testdata.in", "r");   // open file dengan mode read
 
-    fscanf(fp, "%d\n", &N);
-    for (int i = 0; i < N; i++){
+    fscanf(fp, "%d\n", &N); // read angka jumlah record dan simpan di variable N
+    for (int i = 0; i < N; i++){    // loop untuk membaca records dalam file
 
-        fscanf(fp, "%[^#]#%[^\n]\n", &read[i].M, &read[i].P);
+        fscanf(fp, "%[^#]#%[^\n]\n", &read[i].M, &read[i].P);   // read nama-nama pada records
     }
 
-    fscanf(fp,"%d\n", &T);
-    for (int i = 0; i < T; i++){
+    fscanf(fp,"%d\n", &T);  // read angka testcase dan simpnn di variable T
+    for (int i = 0; i < T; i++){    // loop testcase
        
-       fscanf(fp, "%s", &input[i].S);
-    }
-    
-    fclose(fp);
+       fscanf(fp, "%s", &input);   // read name of friend dari file
+        printf("Case #%d: ", i+1); 
 
-    for (int i = 0; i < T; i++){
+        int found = 0;  // declare variableddd found menjadi 0
+        for (int j = 0; j < N; j++){    // loop untuk compare string
 
-        printf("Case #%d: ", i+1);
+            if (strcmp(input, read[j].M) == 0){    // icompare nput_testcase sama dengan name of friend
 
-        int found = 0;
-        for (int j = 0; j < N; j++){
-
-            if (strcmp(input[i].S, read[j].M) == 0){
-
-                printf("%s\n", read[j].P);
-                found = 1;
-                break;
+                printf("%s\n", read[j].P);  // print name tree yang telah tersimpan di struct
+                found = 1;  // set variable found menjadi angka 1
+                break;  // break keluar loop
             }
         }
 
-        if (found == 0){
+        if (found == 0){    // cek apakah found masih berangka 0
             
-            printf("N/A\n");
+            printf("N/A\n");    // print N/A jika found == 0
         }
     }
+    
+    fclose(fp); // close file
 
     return 0;
 }
