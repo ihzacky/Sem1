@@ -1,11 +1,43 @@
 #include <stdio.h>
 
-int arr[] = {14, 6, 23, 18, 7, 47, 2, 83, 16, 38};
-int temp;
+void insertionsort(int arr[], int n);
+void printarr(int arr[], int n);
 
 int main(){
 
+    int arr[] = {14, 6, 23, 18, 7, 47, 2, 83, 16, 38};
+    int n = sizeof(arr) / sizeof(arr[0]);
 
+    insertionsort(arr, n);
+    printarr(arr, n);
 
     return 0;
+}
+
+void insertionsort(int arr[], int n){
+    
+    int j, temp = 0;
+
+    for (int i = 1; i < n; i++){
+        
+        temp = arr[i];
+    
+        for (j = i-1; j >= 0 && arr[j] > temp; j--){
+            
+            arr[j+1] = arr[j];
+        }
+        
+        arr[j+1] = temp;
+    }
+    
+}
+
+// function untuk print array
+void printarr(int arr[], int n){
+
+    for (int i = 0; i < n; i++){
+        
+        printf("%d ", arr[i]);        
+    }
+    printf("\n");
 }
