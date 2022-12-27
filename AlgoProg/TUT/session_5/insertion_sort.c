@@ -16,14 +16,19 @@ int main(){
 
 void insertionsort(int arr[], int n){
     
+    // declare integer j dan temp = 0
     int j, temp = 0;
 
     for (int i = 1; i < n; i++){
         
         temp = arr[i];
     
+        // loop mengcompare value dari setiap elemen array dengan value dari temp
+        // jika value dari elemen array lebih besar dari temp, 
+        //maka value pada array tersebut dipindahkan ke index sebelah kanannya
         for (j = i-1; j >= 0 && arr[j] > temp; j--){
             
+            // array dari 
             arr[j+1] = arr[j];
         }
         

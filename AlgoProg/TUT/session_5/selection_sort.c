@@ -22,10 +22,9 @@ int main(){
 
 void selectionsort(int arr[], int n){
     
-    // 
     for (int i = 0; i < n-1; i++){
         
-        // simpan index dengan 'i'
+        // simpan index di variable 'i'
         int index_low = i;
         for (int j = i+1 ; j < n; j++){
         

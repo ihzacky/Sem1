@@ -18,13 +18,10 @@ int main(){
     return 0;
 }
 
-// funciton untuk melakukan bubble sort
+// function untuk melakukan bubble sort
 void bubblesort(int arr[], int n){
 
-    // 
     for (int i = 0; i < n-1; i++){
-
-        // 
         for (int j = 0; j < n-i - 1; j++){
             
             // jika array saat ini lebih besar dari array selanjutnya, masuk if
