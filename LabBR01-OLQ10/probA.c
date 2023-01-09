@@ -18,7 +18,7 @@ int main(){
 
         for (int j = 0; j < len; j++){
             
-            //result[j] = N[j] + N[len - j];
+            result[j] = N[j] + N[len - j];
         }
         
         printf("Case #%d: %lld\n", i+1, result);

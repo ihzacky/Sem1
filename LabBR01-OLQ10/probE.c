@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-long long int T; // testcase
-long long int N; // length of binary string
-long long int A, B; // minimum number of lightning, max num lightning
+long long int T; 
+long long int N; 
+long long int A, B; 
 char binary[10001];
 
 long int lightning;
